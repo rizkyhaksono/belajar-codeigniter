@@ -12,7 +12,7 @@
     <header>
         <h1>Kemahasiswaan Poltek</h1>
         <nav>
-            <a href="index.php">Home</a>
+            <a href="<?php echo base_url('mahasiswa'); ?>">Home</a>
         </nav>
     </header>
 

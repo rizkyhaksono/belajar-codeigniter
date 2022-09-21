@@ -2,7 +2,7 @@
 
 <?php $this->section('content') ?>
 <article>
-    <a href="add.php">Tambah Mahasiswa</a><br />
+    <a href="<?php echo base_url('mahasiswa/add'); ?>">Tambah Mahasiswa</a><br />
     <p>Dashboard</p><br />
 
     <table width='100%' border=0>

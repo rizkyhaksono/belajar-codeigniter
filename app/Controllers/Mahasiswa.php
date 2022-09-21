@@ -22,4 +22,12 @@ class Mahasiswa extends BaseController
 
         return view('pages/beranda', $data);
     }
+
+    public function add()
+    {
+        $data['mhs'] = $this->Mahasiswa_model->selectdatamhs();
+        $data['judul_halaman'] = "Tambah Data";
+
+        return view('pages/add', $data);
+    }
 }
