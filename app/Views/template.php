@@ -10,7 +10,7 @@
 <body>
 
     <header>
-        <h1>Kemahasiswaan Poltek</h1>
+        <h1>Kemahasiswaan Infotech</h1>
         <nav>
             <a href="<?php echo base_url('mahasiswa'); ?>">Home</a>
         </nav>

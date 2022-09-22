@@ -40,8 +40,11 @@ $routes->get('/', 'Mahasiswa::index');
 $routes->get('/home', 'Mahasiswa::index');
 $routes->get('/mahasiswa', 'Mahasiswa::index');
 $routes->get('/mahasiswa/index.php', 'Mahasiswa::index');
+
 $routes->get('/mahasiswa/add', 'Mahasiswa::add');
 $routes->get('/mahasiswa/add.php', 'Mahasiswa::add');
+
+$routes->post('/mahasiswa/add_aksi', 'Mahasiswa::add_aksi');
 
 /*
  * --------------------------------------------------------------------

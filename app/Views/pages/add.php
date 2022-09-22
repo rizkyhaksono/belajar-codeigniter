@@ -6,7 +6,7 @@
     <p>Tambah Mahasiswa</p>
     <br /><br />
 
-    <form action="#" method="post" name="form1" enctype="multipart/form-data">
+    <form action="<?php echo base_url('mahasiswa/add_aksi'); ?>" method="post" name="form1" enctype="multipart/form-data">
         <table width="25%" border="0">
             <tr>
                 <td>NIM</td>

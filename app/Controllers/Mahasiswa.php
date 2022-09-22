@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Mahasiswa_model;
+use CodeIgniter\Controller;
 
 class Mahasiswa extends BaseController
 {
@@ -29,5 +30,13 @@ class Mahasiswa extends BaseController
         $data['judul_halaman'] = "Tambah Data";
 
         return view('pages/add', $data);
+    }
+
+    public function add_aksi()
+    {
+
+        $data['mhs'] = $this->Mahasiswa_model->insertdatamhs();
+
+        return redirect()->to('/mahasiswa');
     }
 }
