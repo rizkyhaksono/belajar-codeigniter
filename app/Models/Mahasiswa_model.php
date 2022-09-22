@@ -39,8 +39,12 @@ class Mahasiswa_model extends Model
         $nama = $this->request->getPost('nama');
         $alamat = $this->request->getPost('alamat');
 
-        $sql = "INSERT INTO mahasiswa(nim, nama_mhs, alamat, foto)
-                        VALUES ('$nim', '$nama', '$alamat', '')";
+        $fileFoto = $this->request->getFile('fotomhs');
+        $namaFoto = $fileFoto->getName();
+
+        $fileFoto->move('public/foto', $namaFoto);
+
+        $sql = "INSERT INTO mahasiswa(nim, nama_mhs, alamat, foto) VALUES ('$nim', '$nama', '$alamat', '$namaFoto')";
 
         $this->db->query($sql);
 
