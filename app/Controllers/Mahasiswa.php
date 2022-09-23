@@ -26,7 +26,9 @@ class Mahasiswa extends BaseController
 
     public function add()
     {
-        $data['mhs'] = $this->Mahasiswa_model->selectdatamhs();
+
+        session();
+        $data['pesan_validasi'] = \Config\Services::validation();
         $data['judul_halaman'] = "Tambah Data";
 
         return view('pages/add', $data);
@@ -34,6 +36,12 @@ class Mahasiswa extends BaseController
 
     public function add_aksi()
     {
+        // validasi gambar dari user
+        if (!$this->validate([
+            'fotomhs' => 'uploaded[fotomhs]|ext_in[fotomhs,png,jpg]|max_size[fotomhs,1024]'
+        ])) {
+            return redirect()->to('/mahasiswa/add')->withInput();
+        }
 
         $data['mhs'] = $this->Mahasiswa_model->insertdatamhs();
 
