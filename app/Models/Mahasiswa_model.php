@@ -50,4 +50,8 @@ class Mahasiswa_model extends Model
 
         return;
     }
+
+    public function detaildatamhs()
+    {
+    }
 }

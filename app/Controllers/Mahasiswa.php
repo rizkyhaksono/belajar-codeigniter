@@ -47,4 +47,13 @@ class Mahasiswa extends BaseController
 
         return redirect()->to('/mahasiswa');
     }
+
+    public function detail($id_mhs)
+    {
+        $data['mhs'] = $this->Mahasiswa_model->detaildatamhs();
+
+        $data['judul_halaman'] = "Detail Data";
+
+        return view('mahasiswa/detail', $data);
+    }
 }

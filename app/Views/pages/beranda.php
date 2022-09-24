@@ -33,7 +33,7 @@
                         </div>
                     </td>
                     <td>
-                        <a href="detail.php">Detail</a> |
+                        <a href="' . base_url('mahasiswa/detail/' . $row['id_mhs']) . '">Detail</a> |
                         <a href="edit.php">Edit</a> |
                         <a href="#" onClick=" return confirm(\'Apakah Anda Yakin Ingin Menghapus Berita Ini?\') ">Delete</a>
                     </td>
