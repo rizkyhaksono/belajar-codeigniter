@@ -46,6 +46,7 @@ $routes->get('/mahasiswa/add.php', 'Mahasiswa::add');
 $routes->post('/mahasiswa/add_aksi', 'Mahasiswa::add_aksi');
 
 $routes->get('/mahasiswa/detail/(:num)', 'Mahasiswa::detail/$1');
+$routes->get('/mahasiswa/edit/(:num)', 'Mahasiswa::edit/$1');
 
 /*
  * --------------------------------------------------------------------

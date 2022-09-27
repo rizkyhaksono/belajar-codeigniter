@@ -12,7 +12,7 @@
     <header>
         <h1>Kemahasiswaan Infotech</h1>
         <nav>
-            <a href="<?php echo base_url('mahasiswa'); ?>">Home</a>
+            <a href="<?php echo base_url('/'); ?>">Home</a>
         </nav>
     </header>
 

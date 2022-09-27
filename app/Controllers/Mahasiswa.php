@@ -56,4 +56,13 @@ class Mahasiswa extends BaseController
 
         return view('pages/detail', $data);
     }
+
+    public function edit($id_mhs)
+    {
+        $data['mhs'] = $this->Mahasiswa_model->editdatamhs($id_mhs);
+
+        $data['judul_halaman'] = "Edit Data";
+
+        return view('pages/edit', $data);
+    }
 }
