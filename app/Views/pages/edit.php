@@ -38,6 +38,7 @@
                 <td><input type="submit" name="submit" value="Edit"></td>
             </tr>
         </table>
+        <?php echo $pesan_validasi->getError('fotomhs') ?>
     </form>
 </article>
 

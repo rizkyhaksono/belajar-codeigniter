@@ -38,7 +38,7 @@ class Mahasiswa extends BaseController
     {
         // validasi gambar dari user
         if (!$this->validate([
-            'fotomhs' => 'uploaded[fotomhs]|ext_in[fotomhs,png,jpg]|max_size[fotomhs,1024]'
+            'fotomhs' => 'uploaded[fotomhs]|ext_in[fotomhs, png, jpg]|max_size[fotomhs, 1024]'
         ])) {
             return redirect()->to('/mahasiswa/add')->withInput();
         }
@@ -59,7 +59,10 @@ class Mahasiswa extends BaseController
 
     public function edit($id_mhs)
     {
-        $data['mhs'] = $this->Mahasiswa_model->editdatamhs($id_mhs);
+        session();
+        $data['pesan_validasi'] = \Config\Services::validation();
+
+        $data['mhs'] = $this->Mahasiswa_model->detaildatamhs($id_mhs);
 
         $data['judul_halaman'] = "Edit Data";
 
@@ -68,6 +71,12 @@ class Mahasiswa extends BaseController
 
     public function edit_aksi($id_mhs)
     {
+        if (!$this->validate([
+            'fotomhs' => 'ext_in[fotomhs, png, jpg]|max_size[fotomhs, 1024]'
+        ])) {
+            return redirect()->to('../mahasiswa/edit/' . $id_mhs)->withInput();
+        }
+
         $data['mhs'] = $this->Mahasiswa_model->editdatamhs();
 
         return redirect()->to('/mahasiswa');

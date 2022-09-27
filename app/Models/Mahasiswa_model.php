@@ -57,19 +57,24 @@ class Mahasiswa_model extends Model
         $nama = $this->request->getPost('nama');
         $alamat = $this->request->getPost('alamat');
 
-        $fileFoto = $this->request->getFile('fotomhs');
-        $namaFoto = $fileFoto->getName();
+        if ($this->request->getFile('fotomhs')->getName()) {
+            unlink('public/foto/' . $fotoLama);
 
-        if ($namaFoto == NULL) {
-            $namaFoto = "elon.jpg";
-        }
+            $fileFoto = $this->request->getFile('fotomhs');
+            $namaFoto = $fileFoto->getName();
 
-        $fileFoto->move('public/foto', $namaFoto);
-        $sql = "UPDATE mahasiswa SET nim = '$nim',
+            $fileFoto->move('public/foto', $namaFoto);
+            $sql = "UPDATE mahasiswa SET nim = '$nim',
                                     nama_mhs = '$nama',
                                     alamat = '$alamat',
                                     foto = '$namaFoto'
                                 WHERE id_mhs = '$id_mhs'";
+        } else {
+            $sql = "UPDATE mahasiswa SET nim = '$nim',
+                                    nama_mhs = '$nama',
+                                    alamat = '$alamat'
+                                WHERE id_mhs = '$id_mhs'";
+        }
 
         $this->db->query($sql);
         return;
