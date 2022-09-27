@@ -50,10 +50,10 @@ class Mahasiswa extends BaseController
 
     public function detail($id_mhs)
     {
-        $data['mhs'] = $this->Mahasiswa_model->detaildatamhs();
+        $data['mhs'] = $this->Mahasiswa_model->detaildatamhs($id_mhs);
 
         $data['judul_halaman'] = "Detail Data";
 
-        return view('mahasiswa/detail', $data);
+        return view('pages/detail', $data);
     }
 }

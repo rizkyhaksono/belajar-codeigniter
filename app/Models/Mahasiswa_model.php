@@ -43,15 +43,16 @@ class Mahasiswa_model extends Model
         $namaFoto = $fileFoto->getName();
 
         $fileFoto->move('public/foto', $namaFoto);
-
         $sql = "INSERT INTO mahasiswa(nim, nama_mhs, alamat, foto) VALUES ('$nim', '$nama', '$alamat', '$namaFoto')";
-
         $this->db->query($sql);
-
         return;
     }
 
-    public function detaildatamhs()
+    public function detaildatamhs($id_mhs)
     {
+        $sql = "SELECT * FROM mahasiswa WHERE id_mhs = '$id_mhs'";
+        $query = $this->db->query($sql);
+        $data = $query->getResultArray();
+        return $data;
     }
 }
