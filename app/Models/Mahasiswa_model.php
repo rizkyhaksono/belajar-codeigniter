@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-use CodeIgniter\HTTP\RequestInterface;
 
 class Mahasiswa_model extends Model
 {
@@ -48,11 +47,31 @@ class Mahasiswa_model extends Model
         return $data;
     }
 
-    public function editdatamhs($id_mhs)
+    public function editdatamhs()
     {
-        $sql = "SELECT * FROM mahasiswa WHERE id_mhs = '$id_mhs'";
-        $query = $this->db->query($sql);
-        $data = $query->getResultArray();
-        return $data;
+        // data sementara
+        $id_mhs = $this->request->getPost('id_mhs');
+        $fotoLama = $this->request->getPost('fotoLama');
+
+        $nim = $this->request->getPost('nim');
+        $nama = $this->request->getPost('nama');
+        $alamat = $this->request->getPost('alamat');
+
+        $fileFoto = $this->request->getFile('fotomhs');
+        $namaFoto = $fileFoto->getName();
+
+        if ($namaFoto == NULL) {
+            $namaFoto = "elon.jpg";
+        }
+
+        $fileFoto->move('public/foto', $namaFoto);
+        $sql = "UPDATE mahasiswa SET nim = '$nim',
+                                    nama_mhs = '$nama',
+                                    alamat = '$alamat',
+                                    foto = '$namaFoto'
+                                WHERE id_mhs = '$id_mhs'";
+
+        $this->db->query($sql);
+        return;
     }
 }

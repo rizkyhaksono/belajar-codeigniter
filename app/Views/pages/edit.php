@@ -6,7 +6,11 @@
     <p><?php echo $judul_halaman; ?></p>
     <br /><br />
 
-    <form action="#" method="post" name="form1" enctype="multipart/form-data">
+    <form action="<?php echo base_url('mahasiswa/edit_aksi/' . $mhs[0]['id_mhs']) ?>" method="post" name="form1" enctype="multipart/form-data">
+
+        <input type="hidden" name="id_mhs" value="<?php echo $mhs[0]['id_mhs']; ?>">
+        <input type="hidden" name="fotoLama" value="<?php echo $mhs[0]['foto']; ?>">
+
         <table width="25%" border="0">
             <tr>
                 <td>NIM</td>
@@ -31,7 +35,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="submit" value="Add"></td>
+                <td><input type="submit" name="submit" value="Edit"></td>
             </tr>
         </table>
     </form>

@@ -65,4 +65,11 @@ class Mahasiswa extends BaseController
 
         return view('pages/edit', $data);
     }
+
+    public function edit_aksi($id_mhs)
+    {
+        $data['mhs'] = $this->Mahasiswa_model->editdatamhs();
+
+        return redirect()->to('/mahasiswa');
+    }
 }
