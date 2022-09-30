@@ -81,4 +81,11 @@ class Mahasiswa extends BaseController
 
         return redirect()->to('/mahasiswa');
     }
+
+    public function delete($id_mhs, $fotoLama)
+    {
+        $this->Mahasiswa_model->deletedatamhs($id_mhs, $fotoLama);
+
+        return redirect()->to('/mahasiswa');
+    }
 }

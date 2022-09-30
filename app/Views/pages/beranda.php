@@ -34,8 +34,8 @@
                     </td>
                     <td>
                         <a href=" ' . base_url('mahasiswa/detail/' . $row['id_mhs']) . ' ">Detail</a> |
-                        <a href="' . base_url('mahasiswa/edit/' . $row['id_mhs']) . '">Edit</a> |
-                        <a href="#" onClick=" return confirm(\'Apakah Anda Yakin Ingin Menghapus Berita Ini?\') ">Delete</a>
+                        <a href=" ' . base_url('mahasiswa/edit/' . $row['id_mhs']) . ' ">Edit</a> |
+                        <a href=" ' . base_url('mahasiswa/delete/' . $row['id_mhs']) . '/' . $row['foto'] . ' " onClick=" return confirm(\'Apakah Anda Yakin Ingin Menghapus Berita Ini?\') ">Delete</a>
                     </td>
                 </tr>
                 ';

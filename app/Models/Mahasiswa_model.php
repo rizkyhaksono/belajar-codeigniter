@@ -79,4 +79,13 @@ class Mahasiswa_model extends Model
         $this->db->query($sql);
         return;
     }
+
+    public function deletedatamhs($id_mhs, $fotoLama)
+    {
+        unlink('public/foto/' . $fotoLama);
+
+        $sql = "DELETE FROM mahasiswa WHERE id_mhs = '$id_mhs";
+
+        $this->db->query($sql);
+    }
 }
