@@ -51,6 +51,8 @@ $routes->post('/mahasiswa/edit_aksi/(:num)', 'Mahasiswa::edit_aksi/$1');
 
 $routes->get('/mahasiswa/delete/(:num)/(:segment)', 'Mahasiswa::delete/$1/$2');
 
+$routes->get('/mahasiswa/login', 'Login::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
