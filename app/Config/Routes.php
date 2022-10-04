@@ -52,6 +52,7 @@ $routes->post('/mahasiswa/edit_aksi/(:num)', 'Mahasiswa::edit_aksi/$1');
 $routes->get('/mahasiswa/delete/(:num)/(:segment)', 'Mahasiswa::delete/$1/$2');
 
 $routes->get('/mahasiswa/login', 'Login::index');
+$routes->post('/login/login_aksi', 'Login::login_aksi');
 
 /*
  * --------------------------------------------------------------------

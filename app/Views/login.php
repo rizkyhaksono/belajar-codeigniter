@@ -8,7 +8,7 @@
     <title>Login Sistem</title>
 </head>
 
-<body>
+<body style="margin: 0 auto; max-width: 300px;">
 
     <h1>Sistem Login</h1>
 
