@@ -13,6 +13,7 @@
         <h1>Kemahasiswaan Infotech</h1>
         <nav>
             <a href="<?php echo base_url('/'); ?>">Home</a>
+            <a href="<?php echo base_url('/mahasiswa/logout') ?>">Logout</a>
         </nav>
     </header>
 

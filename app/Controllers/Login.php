@@ -26,9 +26,18 @@ class Login extends BaseController
         $login = $this->Login_model->cekLogin();
 
         if ($login != 'Login gagal, silahkan coba lagi') {
-            return redirect()->to('/mahasiswa');
+            $this->session->set('data_login', $login);
+
+            return redirect()->to('/');
         } else {
             echo $login;
         }
+    }
+
+    public function logout()
+    {
+        $this->session->destroy();
+
+        return redirect()->to('/mahasiswa/login');
     }
 }

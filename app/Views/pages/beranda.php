@@ -3,7 +3,8 @@
 <?php $this->section('content') ?>
 <article>
     <a href="<?php echo base_url('mahasiswa/add'); ?>">Tambah Mahasiswa</a><br />
-    <p>Dashboard</p><br />
+    <p>Dashboard</p>
+    <p>Hallo, <?php echo $login_status['username'] ?></p>
 
     <table width='100%' border=0>
 

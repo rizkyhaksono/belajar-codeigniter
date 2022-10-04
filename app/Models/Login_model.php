@@ -21,7 +21,7 @@ class Login_model extends Model
         $uname = $this->request->getPost('username');
         $upass = $this->request->getPost('password');
 
-        $sql = "SELECT * FROM admin WHERE username='$uname' AND password='  $upass'";
+        $sql = "SELECT * FROM admin WHERE username='$uname' AND password='$upass'";
 
         $query = $this->db->query($sql);
 

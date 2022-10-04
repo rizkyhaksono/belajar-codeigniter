@@ -17,9 +17,17 @@ class Mahasiswa extends BaseController
 
     public function index()
     {
+        // cek apakah user sudah login atau tidak
+        if (empty($this->session->data_login)) {
+            return redirect()->to('/mahasiswa/login');
+        }
+
         // mengambil data dari model
         $data['mhs'] = $this->Mahasiswa_model->selectdatamhs();
         $data['judul_halaman'] = "Beranda Sistem";
+
+        // mengirim data ke view
+        $data['login_status'] = $this->session->data_login;
 
         return view('pages/beranda', $data);
     }
