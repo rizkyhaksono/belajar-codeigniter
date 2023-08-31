@@ -2,8 +2,6 @@
 
 Belajar CodeIgniter di Youtube
 
-Test 1, Test 2, Test 3
-
 ## What is CodeIgniter?
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
@@ -65,4 +63,5 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
 - xml (enabled by default - don't turn it off)
-# belajar-codeigniter
+
+[LICENSE](https://github.com/rizkyhaksono/belajar-codeigniter/blob/main/LICENSE)
